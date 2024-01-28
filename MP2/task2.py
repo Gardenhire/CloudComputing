@@ -13,7 +13,7 @@ def home():
     
 @app.route('/', methods = ['POST']) 
 def post():
-    subprocess.Popen('python3 stress.py')
+    subprocess.Popen(['python3 stress.py'], shell=True)
     return str("0")
  
 # main driver function
@@ -21,4 +21,4 @@ if __name__ == '__main__':
  
     # run() method of Flask class runs the application 
     # on the local development server.
-    app.run(host='0.0.0.0',port=5000)
+    app.run(host='0.0.0.0',port=5001)
